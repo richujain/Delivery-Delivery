@@ -1,6 +1,9 @@
 package com.example.deliverydeliverycourier;
 
-public class SplashScreen {
-    private final int SPLASH_DISPLAY_LENGTH = 1000;
-    
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SplashScreen extends AppCompatActivity {
+
+
 }
+
