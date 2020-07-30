@@ -41,11 +41,24 @@
         <Button
             android:text="Sign In"
             android:id="@+id/btnSignIn"
+            android:background="@drawable/btn_sign_in_background"
             android:textColor="@android:color/black"
-
-            android:layout_marginRight="6dp"
-            android:layout_weight="0dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content" />
+
+        <Button
+            android:text=" Register "
+            android:id="@+id/btnRegister"
+            android:background="@drawable/btn_register_background"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="130dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
         
     </LinearLayout>
 
