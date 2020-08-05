@@ -1,69 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".LoginActivity"
     android:id="@+id/rootLayout"
-    tools:context=".MainActivity"
     android:background="@drawable/backgroundlogin">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true">
 
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/courier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcomecCustomer"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Looking for the customer app?"
+        android:text="Want to deliver something?"
         android:textSize="12sp"
+        android:textColor="@color/colorBtnRegister"
         android:textAlignment="center"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </TextView>
+        />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_above="@+id/courier"
+        android:layout_above="@+id/welcomecCustomer"
         android:layout_margin="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        
+        android:weightSum="2">
+
         <Button
-            android:text="Sign In"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btnSignIn"
-            android:background="@drawable/btn_sign_in_background"
-            android:textColor="@android:color/black"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="5dp"
+            android:text="SIGN IN"
+            android:textColor="@color/colorWhite"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/btn_sign_in_background"
+            android:layout_marginRight="6dp"
+            />
 
         <Button
-            android:text=" Register "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btnRegister"
-            android:background="@drawable/btn_register_background"
-            android:textColor="@android:color/black"
-            android:layout_marginLeft="130dp"
+            android:text="REGISTER"
+            android:textColor="@color/colorBtnSignIn"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/btn_register_background"
+            android:layout_marginLeft="6dp"
+            />
 
-        
+
     </LinearLayout>
-
-
 
 
 </RelativeLayout>

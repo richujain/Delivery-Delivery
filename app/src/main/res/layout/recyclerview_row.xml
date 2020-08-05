@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="18dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="12dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:elevation="90dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="15dp"
+            android:visibility="visible"
+            android:id="@+id/vehicleTypeCircularImage"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/statusOfOrder"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:text="This is a Title"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/offeredAmount"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            android:textSize="15sp"
+            android:textAppearance="@style/ShapeAppearance.MaterialComponents.LargeComponent"
+            android:text="$100.25"
+            android:layout_below="@+id/statusOfOrder"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderDate"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            android:textSize="15sp"
+            android:text="Posted On 2019/01/01"
+            android:layout_below="@+id/offeredAmount"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
