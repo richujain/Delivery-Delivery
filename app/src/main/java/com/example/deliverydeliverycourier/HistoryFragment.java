@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -47,6 +50,7 @@ public class HistoryFragment extends Fragment {
     FirebaseAuth mAuth;
     String uid = "";
     Double totalAmount = 0.0;
+    TextView totalEarningsTextView;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
@@ -57,6 +61,7 @@ public class HistoryFragment extends Fragment {
         recyclerViewHistory.setLayoutManager(layoutManager);
         recyclerViewHistory.setHasFixedSize(true);
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        totalEarningsTextView = getView().findViewById(R.id.totalEarnings);
         arrayList = new ArrayList<>();
         clearAll();
         getDataFromFirebase();
@@ -79,6 +84,7 @@ public class HistoryFragment extends Fragment {
                         modelClass.setStatus(snapshot.child("status").getValue().toString());
                         Double amount = Double.parseDouble(snapshot.child("amount").getValue().toString());
                         totalAmount = totalAmount + amount;
+                        totalEarningsTextView.setText("Total Earnings : $"+totalAmount);
                         Log.d("total",""+totalAmount);
                         arrayList.add(modelClass);
                     }
