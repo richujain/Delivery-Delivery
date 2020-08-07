@@ -16,11 +16,19 @@
         android:background="@color/colorWhite"
         android:padding="20dp"
         android:paddingBottom="15dp"
-        android:text="ORDERS"
+        android:text="HISTORY"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="#3083D6"
         android:textStyle="normal|bold" />
+
+    <TextView
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colortoolbar"
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_marginTop="110dp"
@@ -34,8 +42,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/colortoolbar"
-            android:text="Total Amount" />
+
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#529c27"
+            android:id="@+id/totalearnings" />
+
+
 
 
 
