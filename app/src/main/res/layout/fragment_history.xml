@@ -30,10 +30,20 @@
         android:layout_marginBottom="50dp"
         android:background="@color/colorWhite">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colortoolbar"
+            android:text="Total Amount" />
+
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewHistory"
             android:layout_width="match_parent"
             android:layout_height="540dp"
+
             android:layout_marginTop="9dp"
             android:layout_marginBottom="50dp">
 
