@@ -10,5 +10,8 @@
     <color name="colorRippleEffect">#f816a463</color>
     <color name="colorBtnSignIn">#1fbad6</color>
     <color name="colorBtnRegister">#83838c</color>
+    <color name="colortoolbar">#489cff</color>
+    <color name="colorrequestdriver">#cc3f35</color>
+
 
 </resources>
