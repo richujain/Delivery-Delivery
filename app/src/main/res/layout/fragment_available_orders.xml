@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".AvailableOrdersFragment">
 
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp"
+        android:paddingBottom="15dp"
+        android:text="DEALS"
+        android:background="@color/colorWhite"
+
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#3083D6"
+        android:textStyle="normal|bold" />
+    <include layout="@layout/toolbar"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="75dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="85dp"
         android:background="@color/colorWhite"
         android:id="@+id/recyclerView">
 
