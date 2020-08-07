@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    app:cardBackgroundColor="@color/colorWhite"
     android:layout_height="match_parent"
     app:cardElevation="10dp">
     <LinearLayout
@@ -13,113 +14,131 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Email "
             android:inputType="textEmailAddress"
             android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:met_singleLineEllipsis="true"
-            app:met_baseColor="@color/colorPrimary"
+            android:textColor="@color/colortoolbar"
+            android:textColorHint="@color/colortoolbar"
+            android:textSize="17sp"
+            app:met_textColorHint="@color/colortoolbar"
+            app:met_baseColor="@color/colortoolbar"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/colorPrimary"
-            />
+            app:met_primaryColor="@color/colortoolbar"
+            app:met_singleLineEllipsis="true" />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtPassword"
             android:hint="Password "
             android:inputType="textPassword"
             android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textColor="@color/colortoolbar"
+            android:textColorHint="@color/colortoolbar"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:met_singleLineEllipsis="true"
-            app:met_baseColor="@color/colorPrimary"
+            app:met_textColorHint="@color/colortoolbar"
+            app:met_baseColor="@color/colortoolbar"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/colorPrimary"
+            app:met_primaryColor="@color/colortoolbar"
             />
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtName"
             android:hint="Name "
             android:inputType="textCapSentences"
             android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textColor="@color/colortoolbar"
+            android:textColorHint="@color/colortoolbar"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:met_singleLineEllipsis="true"
-            app:met_baseColor="@color/colorPrimary"
+            app:met_baseColor="@color/colortoolbar"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/colorPrimary"
+            app:met_textColorHint="@color/colortoolbar"
+            app:met_primaryColor="@color/colortoolbar"
             />
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtPhone"
             android:hint="Phone Number "
             android:inputType="phone"
             android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textColor="@color/colortoolbar"
+            android:textColorHint="@color/colortoolbar"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:met_singleLineEllipsis="true"
-            app:met_baseColor="@color/colorPrimary"
+            app:met_baseColor="@color/colortoolbar"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/colorPrimary"
+            app:met_textColorHint="@color/colortoolbar"
+            app:met_primaryColor="@color/colortoolbar"
             />
+
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/colortoolbar"
             android:fillViewport="false">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:id="@+id/linearLayoutAddTask"
-                android:padding="5dp">
+                android:layout_width="380dp"
+                android:layout_height="75dp"
+                android:layout_below="@id/linearLayoutAddTask"
+                android:layout_marginLeft="10dp"
+
+                android:background="#5DA0EF"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:paddingTop="10dp"
-                    android:src="@color/colorGrey"
                     android:id="@+id/imageHatchBack"
+                    android:layout_width="90dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/hatchback1"
                     android:contentDescription="Hatchback image"
-                    />
+                    android:paddingTop="10dp" />
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:paddingTop="10dp"
-                    android:paddingStart="10dp"
-                    android:src="@color/colorBlack"
-                    android:paddingEnd="10dp"
                     android:id="@+id/imageSedan"
+                    android:layout_width="90dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/sedan"
                     android:contentDescription="Sedan image"
-                    />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:paddingTop="10dp"
                     android:paddingStart="10dp"
-                    android:src="@color/colorRed"
+                    android:paddingTop="10dp"
                     android:paddingEnd="10dp"
+                    android:scaleType="centerCrop" />
+
+
+                <ImageView
                     android:id="@+id/imageSUV"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/suv1"
                     android:contentDescription="SUV image"
-                    />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:paddingTop="10dp"
                     android:paddingStart="10dp"
+                    android:paddingTop="10dp"
                     android:paddingEnd="10dp"
+                    android:scaleType="center" />
+
+                <ImageView
                     android:id="@+id/imagePickUp"
-                    android:src="@color/colorPrimary"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/pickup1"
                     android:contentDescription="Pick Up image"
-                    />
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp" />
+
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -130,21 +149,25 @@
             android:padding="10dp"
             android:visibility="gone"
             android:gravity="center"
+            android:textColor="@color/colortoolbar"
             android:id="@+id/tvVehicleType"/>
+
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtLicenseNumber"
             android:hint="License Number"
             android:inputType="text"
             android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textColor="@color/colortoolbar"
+            android:textColorHint="@color/colortoolbar"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:met_singleLineEllipsis="true"
-            app:met_baseColor="@color/colorPrimary"
+            app:met_baseColor="@color/colortoolbar"
+            app:met_textColorHint="@color/colortoolbar"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/colorPrimary"
+            app:met_primaryColor="@color/colortoolbar"
             />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

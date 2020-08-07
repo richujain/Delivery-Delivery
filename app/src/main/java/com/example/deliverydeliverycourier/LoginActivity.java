@@ -69,9 +69,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginDialog() {
 
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this,R.style.MyDialogTheme);
         dialog.setTitle("Sign In");
-        dialog.setMessage("Please use email to Sign In");
+
 
         LayoutInflater inflater = LayoutInflater.from(this);
         View login_layout = inflater.inflate(R.layout.layout_login,null);
@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-        dialog.setNegativeButton("Cancell", new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -125,9 +125,9 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void showRegisterDialogue()
     {
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this,R.style.MyDialogTheme);
         dialog.setTitle("Register");
-        dialog.setMessage("Please use email to register");
+
 
         LayoutInflater inflater = LayoutInflater.from(this);
         View register_layout = inflater.inflate(R.layout.layout_register,null);
