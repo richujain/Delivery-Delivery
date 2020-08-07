@@ -54,6 +54,7 @@ public class DriverHomePage extends AppCompatActivity {
                         Intent intent = new Intent(DriverHomePage.this,ViewActiveOrderDetails.class);
                         intent.putExtra("key",key);
                         startActivity(intent);
+                        finish();
                     }
                 }
             }

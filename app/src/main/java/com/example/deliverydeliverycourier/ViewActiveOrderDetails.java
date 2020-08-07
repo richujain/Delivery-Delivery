@@ -95,6 +95,8 @@ public class ViewActiveOrderDetails extends AppCompatActivity {
             public void onClick(View view) {
                 finalDatabaseReference.child("status").setValue("Not Accepted");
                 finalDatabaseReference.child("driver").setValue("");
+                startActivity(new Intent(ViewActiveOrderDetails.this,DriverHomePage.class));
+                finish();
             }
         });
     }

@@ -48,9 +48,9 @@ public class RecyclerAdapterForHistory extends RecyclerView.Adapter<RecyclerAdap
                 //get key somehow
                 String key = modelClassArrayList.get(position).getKey();
                 //context.startActivity(new Intent(context,ViewOrderDetails.class));
-                Intent intent = new Intent(context,ViewOrderDetails.class);
+                /*Intent intent = new Intent(context,ViewOrderDetails.class);
                 intent.putExtra("key",key);
-                context.startActivity(intent);
+                context.startActivity(intent);*/
             }
         });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
