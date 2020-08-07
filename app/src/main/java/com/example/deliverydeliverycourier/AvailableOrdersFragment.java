@@ -34,7 +34,7 @@ public class AvailableOrdersFragment extends Fragment {
     RecyclerView recyclerView;
 
     private ArrayList<ModelClass> arrayList;
-    private com.example.deliverydeliverycustomer.RecyclerAdapter recyclerAdapter;
+    private RecyclerAdapter recyclerAdapter;
     private Context context;
     DatabaseReference databaseReference;
     FirebaseUser firebaseUser;
@@ -74,7 +74,7 @@ public class AvailableOrdersFragment extends Fragment {
                         arrayList.add(modelClass);
                     }
                 }
-                recyclerAdapter = new com.example.deliverydeliverycustomer.RecyclerAdapter(getContext(),arrayList);
+                recyclerAdapter = new RecyclerAdapter(getContext(),arrayList);
                 recyclerView.setAdapter(recyclerAdapter);
                 recyclerAdapter.notifyDataSetChanged();
             }

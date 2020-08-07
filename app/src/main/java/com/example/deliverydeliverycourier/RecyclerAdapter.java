@@ -1,4 +1,4 @@
-package com.example.deliverydeliverycustomer;
+package com.example.deliverydeliverycourier;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.deliverydeliverycourier.ModelClass;
 import com.example.deliverydeliverycourier.R;
+import com.example.deliverydeliverycourier.ViewOrderDetails;
 
 import java.util.ArrayList;
 
@@ -49,10 +50,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             public void onClick(View view) {
                 //get key somehow
                 String key = modelClassArrayList.get(position).getKey();
-                //context.startActivity(new Intent(context,ViewOrderDetails.class));
-                //Intent intent = new Intent(context,ViewOrderDetails.class);
-                //intent.putExtra("key",key);
-               // context.startActivity(intent);
+                //context.startActivity(new Intent(context, ViewOrderDetails.class));
+                Intent intent = new Intent(context,ViewOrderDetails.class);
+                intent.putExtra("key",key);
+                context.startActivity(intent);
             }
         });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {

@@ -26,8 +26,8 @@ public class DriverHomePage extends AppCompatActivity {
         bottomBar.setBarBackgroundColor(Color.parseColor("#FFFFFF"));
         ArrayList<Flaretab> tabs = new ArrayList<>();
         tabs.add(new Flaretab(getResources().getDrawable(R.drawable.neworders),"New Task","#FFECB3"));
-        tabs.add(new Flaretab(getResources().getDrawable(R.drawable.delivered),"History","#80DEEA"));
-        tabs.add(new Flaretab(getResources().getDrawable(R.drawable.profile_48px),"Expense","#B39DDB"));
+        tabs.add(new Flaretab(getResources().getDrawable(R.drawable.delivered),"Orders","#80DEEA"));
+        tabs.add(new Flaretab(getResources().getDrawable(R.drawable.profile_48px),"Profile","#B39DDB"));
         //tabs.add(new Flaretab(getResources().getDrawable(R.drawable.debt),"Debts","#EF9A9A"));
         //tabs.add(new Flaretab(getResources().getDrawable(R.drawable.settingsb),"Credit","#B2DFDB"));
 
