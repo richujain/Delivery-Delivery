@@ -68,6 +68,7 @@
                     android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/colortoolbar"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
                     android:id="@+id/editTextFrom"/>
@@ -89,6 +90,7 @@
                     android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/colortoolbar"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
                     android:id="@+id/editTextTo"/>
@@ -111,6 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
+                    android:textColor="@color/colortoolbar"
                     android:gravity="center"
                     android:id="@+id/editTextDate"/>
             </LinearLayout>
@@ -131,6 +134,7 @@
                     android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/colortoolbar"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
                     android:id="@+id/editTextWeight"/>
@@ -152,6 +156,7 @@
                     android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/colortoolbar"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
                     android:id="@+id/editTextAmount"/>
@@ -173,6 +178,7 @@
                     android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/colortoolbar"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
                     android:textStyle="bold"
