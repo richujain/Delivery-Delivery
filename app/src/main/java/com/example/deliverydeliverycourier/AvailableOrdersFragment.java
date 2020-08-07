@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,11 @@ public class AvailableOrdersFragment extends Fragment {
     private RecyclerAdapter recyclerAdapter;
     private Context context;
     DatabaseReference databaseReference;
+    DatabaseReference databaseReferenceTwo;
     FirebaseUser firebaseUser;
     FirebaseAuth mAuth;
     String uid = "";
+    String vehicleType;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
@@ -50,9 +53,51 @@ public class AvailableOrdersFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReferenceTwo = FirebaseDatabase.getInstance().getReference();
         arrayList = new ArrayList<>();
         clearAll();
-        getDataFromFirebase();
+        vehicleType = "trial";
+        vehicleType = getVehicleType( new OnGetDataListener() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                getDataFromFirebase();
+
+            }
+            @Override
+            public void onStart() {
+                //when starting
+                Log.d("ONSTART", "Started");
+            }
+
+            @Override
+            public void onFailure() {
+                Log.d("onFailure", "Failed");
+            }
+        });
+    }
+
+    private String getVehicleType(final OnGetDataListener listener) {
+        listener.onStart();
+        Query query = databaseReferenceTwo.child("drivers");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String key = snapshot.getKey();
+                    if(key.equals(uid)){
+                        vehicleType = snapshot.child("vehicletype").getValue().toString();
+                        listener.onSuccess(dataSnapshot);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                listener.onFailure();
+            }
+        }
+        );
+
+        return vehicleType;
     }
 
     private void getDataFromFirebase() {
@@ -62,7 +107,7 @@ public class AvailableOrdersFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 clearAll();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    if(snapshot.child("status").getValue().toString().equals("Not Accepted")){
+                    if(snapshot.child("status").getValue().toString().equals("Not Accepted") && snapshot.child("vehicletype").getValue().toString().equals(vehicleType)){
                         String key = snapshot.getKey();
                         ModelClass modelClass = new ModelClass();
                         modelClass.setKey(key);
