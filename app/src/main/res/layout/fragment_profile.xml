@@ -66,17 +66,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Name"
+            android:text="Name"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ashish"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
+            android:id="@+id/nameEditText"
             android:textColor="@android:color/darker_gray"
             />
     </LinearLayout>
@@ -107,60 +108,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Name"
+            android:text="Contact"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pratheesh"
+            android:text=""
+            android:id="@+id/contactEditText"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
             android:textColor="@android:color/darker_gray"
             />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"/>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_marginTop="20dp">
-
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_email"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ashish@deliverydelivery.com"
-            android:layout_marginLeft="65dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"
-            />
-    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -182,7 +146,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:background="@drawable/bgm_btn"
-            android:text="Edit Profile"
+            android:text="Update"
             android:gravity="center"
             android:padding="10dp"
             android:textColor="@color/colorAccent"
@@ -190,6 +154,7 @@
             android:drawableLeft="@drawable/ic_edit"
             android:paddingLeft="10dp"
             android:layout_marginLeft="-10dp"
+            android:id="@+id/updateButton"
             />
 
         <TextView
@@ -204,7 +169,7 @@
             android:paddingLeft="10dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="15dp"
-
+            android:id="@+id/logoutButton"
             />
 
 

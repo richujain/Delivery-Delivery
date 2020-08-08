@@ -42,11 +42,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#529c27"
-            android:id="@+id/totalearnings" />
+            android:id="@+id/totalEarnings" />
 
 
 
