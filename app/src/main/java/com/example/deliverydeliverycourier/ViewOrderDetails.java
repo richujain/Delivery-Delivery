@@ -3,6 +3,8 @@ package com.example.deliverydeliverycourier;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -77,6 +79,7 @@ public class ViewOrderDetails extends AppCompatActivity {
                 finalDatabaseReference.child("driver").setValue("");
             }
         });
+
     }
 
     private void setValuesForFields() {
@@ -97,6 +100,28 @@ public class ViewOrderDetails extends AppCompatActivity {
                 editTextFrom.setText(flag);
                 flag = dataSnapshot.child("dropofflocation").getValue().toString();
                 editTextTo.setText(flag);
+                editTextFrom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Uri gmmIntentUri = Uri.parse("geo:0,0?q="+editTextFrom.getText().toString());
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(mapIntent);
+                        }
+                    }
+                });
+                editTextTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Uri gmmIntentUri = Uri.parse("geo:0,0?q="+editTextTo.getText().toString());
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(mapIntent);
+                        }
+                    }
+                });
                 flag = dataSnapshot.child("date").getValue().toString();
                 editTextDate.setText(flag);
                 flag = dataSnapshot.child("amount").getValue().toString();
