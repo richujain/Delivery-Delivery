@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +31,8 @@ public class ViewOrderDetails extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseAuth mAuth;
     String uid = "";
+    String phone;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class ViewOrderDetails extends AppCompatActivity {
         } else {
             throw new IllegalArgumentException("Activity cannot find  extras " + "key");
         }
+        toolbar = findViewById(R.id.toolbar);
         editTextCategory = findViewById(R.id.editTextCategory);
         textViewStatus = findViewById(R.id.textViewStatus);
         editTextFrom = findViewById(R.id.editTextFrom);
@@ -130,6 +136,13 @@ public class ViewOrderDetails extends AppCompatActivity {
                 editTextWeight.setText(flag);
                 flag = dataSnapshot.child("status").getValue().toString();
                 textViewStatus.setText(flag);
+
+                Button contactButton = new Button(ViewOrderDetails.this);
+                contactButton.setText("CONTACT");
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.gravity = Gravity.RIGHT;
+                contactButton.setLayoutParams(params);
+                toolbar.addView(contactButton);
             }
 
             @Override
@@ -137,33 +150,6 @@ public class ViewOrderDetails extends AppCompatActivity {
 
             }
         });
-        /*Query query = databaseReferenceTwo.child(key).child("category");
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        String flag = snapshot.child("category").getValue().toString();
-                        editTextCategory.setText(flag);
-                        flag = snapshot.child("pickuplocation").getValue().toString();
-                        editTextFrom.setText(flag);
-                        flag = snapshot.child("dropofflocation").getValue().toString();
-                        editTextTo.setText(flag);
-                        flag = snapshot.child("date").getValue().toString();
-                        editTextDate.setText(flag);
-                        flag = snapshot.child("amount").getValue().toString();
-                        editTextAmount.setText(flag);
-                        flag = snapshot.child("weight").getValue().toString();
-                        editTextWeight.setText(flag);
-                        flag = snapshot.child("status").getValue().toString();
-                        textViewStatus.setText(flag);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
     }
 
 
