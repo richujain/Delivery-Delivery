@@ -22,13 +22,6 @@
         android:textColor="#3083D6"
         android:textStyle="normal|bold" />
 
-    <TextView
-        android:textSize="14sp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/colortoolbar"
-        android:gravity="center" />
 
     <LinearLayout
         android:layout_marginTop="110dp"
