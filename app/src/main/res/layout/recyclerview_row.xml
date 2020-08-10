@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="375dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="18dp"
     android:orientation="vertical"
     app:cardCornerRadius="12dp"
-    android:layout_marginLeft="5dp"
+    android:layout_marginLeft="20dp"
     android:layout_marginRight="5dp"
     android:elevation="90dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+<RelativeLayout
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:background="@color/colortoolbar">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/vehicleTypeCircularImage"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:scaleType="centerCrop"
             android:layout_margin="15dp"
-            android:visibility="visible"
-            android:id="@+id/vehicleTypeCircularImage"
-            />
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/statusOfOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="7dp"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            android:gravity="center"
             android:text="This is a Title"
-            android:gravity="center"
-            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/offeredAmount"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
-            android:textSize="15sp"
-            android:textAppearance="@style/ShapeAppearance.MaterialComponents.LargeComponent"
-            android:text="$100.25"
-            android:layout_below="@+id/statusOfOrder"
-            />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/orderDate"
+            android:layout_below="@+id/statusOfOrder"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="7dp"
-            android:gravity="center"
             android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            android:gravity="center"
+            android:text="$100.25"
+            android:textAppearance="@style/ShapeAppearance.MaterialComponents.LargeComponent"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp"
-            android:text="Posted On 2019/01/01"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/orderDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/offeredAmount"
-            />
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/vehicleTypeCircularImage"
+            android:gravity="center"
+            android:text="Posted On 2019/01/01"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp" />
 
 
     </RelativeLayout>
