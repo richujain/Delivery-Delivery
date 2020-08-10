@@ -2,12 +2,16 @@ package com.example.deliverydeliverycourier;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,15 +22,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.Manifest.permission.CALL_PHONE;
+
 public class ViewActiveOrderDetails extends AppCompatActivity {
     TextView editTextCategory, editTextFrom, editTextTo, editTextDate, editTextWeight, editTextAmount;
+    ImageView contactButton,messageButton;
     Button pickedUpButton,deliveringButton, deliveredButton, rejectButton;
     TextView textViewStatus;
     DatabaseReference databaseReferenceTwo;
+    DatabaseReference databaseReferenceForPhone;
     String key;
     FirebaseUser firebaseUser;
     FirebaseAuth mAuth;
     String uid = "";
+    String customerId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +65,11 @@ public class ViewActiveOrderDetails extends AppCompatActivity {
         deliveringButton = findViewById(R.id.deliveringButton);
         deliveredButton = findViewById(R.id.deliveredButton);
         rejectButton = findViewById(R.id.rejectButton);
+        contactButton = findViewById(R.id.contactButton);
+        messageButton = findViewById(R.id.messageButton);
         //updating fields
         databaseReferenceTwo = FirebaseDatabase.getInstance().getReference().child("orders").child(key);
+
         setValuesForFields();
 
         //writing
@@ -168,6 +180,45 @@ public class ViewActiveOrderDetails extends AppCompatActivity {
                 editTextWeight.setText(flag);
                 flag = dataSnapshot.child("status").getValue().toString();
                 textViewStatus.setText(flag);
+                customerId = dataSnapshot.child("uid").getValue().toString();
+                databaseReferenceForPhone = FirebaseDatabase.getInstance().getReference().child("Users").child(customerId);
+                databaseReferenceForPhone.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        final String contact = dataSnapshot.child("phone").getValue().toString();
+                        contactButton.setVisibility(View.VISIBLE);
+                        contactButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + contact));
+                                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                                    startActivity(intent);
+                                } else {
+                                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                                }
+
+                            }
+                        });
+                        messageButton.setVisibility(View.VISIBLE);
+                        messageButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+                                smsIntent.setType("vnd.android-dir/mms-sms");
+                                smsIntent.putExtra("address", contact);
+                                smsIntent.putExtra("sms_body","Body of Message");
+                                startActivity(smsIntent);
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
 
             @Override
