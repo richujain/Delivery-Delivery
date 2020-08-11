@@ -181,7 +181,7 @@ public class ViewActiveOrderDetails extends AppCompatActivity {
                 flag = dataSnapshot.child("status").getValue().toString();
                 textViewStatus.setText(flag);
                 customerId = dataSnapshot.child("uid").getValue().toString();
-                databaseReferenceForPhone = FirebaseDatabase.getInstance().getReference().child("Users").child(customerId);
+                databaseReferenceForPhone = FirebaseDatabase.getInstance().getReference().child("users").child(customerId);
                 databaseReferenceForPhone.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -207,7 +207,7 @@ public class ViewActiveOrderDetails extends AppCompatActivity {
                                 Intent smsIntent = new Intent(Intent.ACTION_VIEW);
                                 smsIntent.setType("vnd.android-dir/mms-sms");
                                 smsIntent.putExtra("address", contact);
-                                smsIntent.putExtra("sms_body","Body of Message");
+                                smsIntent.putExtra("sms_body","Hey! I would like to do you delivery.");
                                 startActivity(smsIntent);
 
                             }
